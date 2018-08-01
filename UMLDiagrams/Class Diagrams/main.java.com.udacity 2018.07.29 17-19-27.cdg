@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.com.udacity">
+  <ClassDiagramComponents>
+    <Class name="Game" package="com.udacity" visibility="public" xPosition="55.0" yPosition="30.0">
+      <Fields>
+        <Field name="turn" type="char" visibility="private"/>
+        <Field name="twoPlayer" type="boolean" visibility="private"/>
+        <Field name="grid" type="char[][]" visibility="private"/>
+        <Field name="freeSpots" type="int" visibility="private"/>
+        <Field name="gui" type="GameUI" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="newGame" returnType="void" visibility="public">
+          <Argument type="boolean" name="twoPlayer"/>
+        </Method>
+        <Method name="gridAt" returnType="char" visibility="public">
+          <Argument type="int" name="i"/>
+          <Argument type="int" name="j"/>
+        </Method>
+        <Method name="playAt" returnType="boolean" visibility="public">
+          <Argument type="int" name="i"/>
+          <Argument type="int" name="j"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="doChecks" returnType="boolean" visibility="public"/>
+        <Method name="nextTurn" returnType="void" visibility="public"/>
+        <Method name="checkGameWinner" returnType="String" visibility="public">
+          <Argument type="char[][]" name="grid"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GameUI" package="com.udacity" visibility="public" xPosition="426.0" yPosition="68.0">
+      <Fields>
+        <Field name="game" type="Game" visibility="private"/>
+        <Field name="frame" type="JFrame" visibility="private"/>
+        <Field name="grid" type="BufferedImage" visibility="private"/>
+        <Field name="x" type="BufferedImage" visibility="private"/>
+        <Field name="o" type="BufferedImage" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Game" name="game"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="paint" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+        <Method name="panelMouseClicked" returnType="void" visibility="private">
+          <Argument type="int" name="i"/>
+          <Argument type="int" name="j"/>
+        </Method>
+        <Method name="gameOver" returnType="void" visibility="public">
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="newGameButtonPressed" returnType="void" visibility="private">
+          <Argument type="boolean" name="twoPlayer"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="gui" source="com.udacity.Game" target="com.udacity.GameUI" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="game" source="com.udacity.GameUI" target="com.udacity.Game" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

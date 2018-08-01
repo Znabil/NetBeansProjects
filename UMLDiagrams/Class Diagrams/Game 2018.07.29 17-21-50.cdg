@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Game">
+  <ClassDiagramComponents>
+    <Class name="Game" package="com.udacity" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="turn" type="char" visibility="private"/>
+        <Field name="twoPlayer" type="boolean" visibility="private"/>
+        <Field name="grid" type="char[][]" visibility="private"/>
+        <Field name="freeSpots" type="int" visibility="private"/>
+        <Field name="gui" type="GameUI" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="newGame" returnType="void" visibility="public">
+          <Argument type="boolean" name="twoPlayer"/>
+        </Method>
+        <Method name="gridAt" returnType="char" visibility="public">
+          <Argument type="int" name="i"/>
+          <Argument type="int" name="j"/>
+        </Method>
+        <Method name="playAt" returnType="boolean" visibility="public">
+          <Argument type="int" name="i"/>
+          <Argument type="int" name="j"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="doChecks" returnType="boolean" visibility="public"/>
+        <Method name="nextTurn" returnType="void" visibility="public"/>
+        <Method name="checkGameWinner" returnType="String" visibility="public">
+          <Argument type="char[][]" name="grid"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
